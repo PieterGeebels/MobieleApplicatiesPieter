@@ -1665,6 +1665,8 @@ containing a value of this type.
         public static final int TextView9999=0x7f090056;
         public static final int TextView99999=0x7f090057;
         public static final int TextView999999=0x7f090058;
+        public static final int TextView9999999=0x7f090059;
+        public static final int TextView99999999=0x7f09005a;
         public static final int action_bar=0x7f090033;
         public static final int action_bar_activity_content=0x7f090003;
         public static final int action_bar_container=0x7f090032;
@@ -1678,7 +1680,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f090030;
         public static final int action_mode_bar_stub=0x7f09002f;
         public static final int action_mode_close_button=0x7f090022;
-        public static final int action_settings=0x7f09005a;
+        public static final int action_settings=0x7f09005c;
         public static final int activity_chooser_view_content=0x7f090023;
         public static final int always=0x7f090014;
         public static final int beginning=0x7f09001b;
@@ -1703,7 +1705,7 @@ containing a value of this type.
         public static final int image=0x7f090025;
         public static final int imageView1=0x7f090041;
         public static final int imageView2=0x7f090044;
-        public static final int imageView3=0x7f090059;
+        public static final int imageView3=0x7f09005b;
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090027;
         public static final int middle=0x7f09001d;
