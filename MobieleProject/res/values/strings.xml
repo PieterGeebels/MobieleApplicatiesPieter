@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MobieleProject</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="title_activity_encounter">EncounterActivity</string>
+    <string name="title_activity_overview">OverviewActivity</string>
+    <string name="title_activity_user">UserActivity</string>
+    <string name="title_activity_greeting">GreetingActivity</string>
+    <string name="title_activity_presence">PresenceActivity</string>
+    <string name="title_activity_payment">PaymentActivity</string>
+
+</resources>
