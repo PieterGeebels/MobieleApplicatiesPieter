@@ -1644,29 +1644,16 @@ containing a value of this type.
         public static final int registratieknop=0x7f02003b;
         public static final int userknopaanwezigheid=0x7f02003c;
         public static final int userknopbedragen=0x7f02003d;
-        public static final int welcomescreen=0x7f02003e;
+        public static final int vaarwelfoto=0x7f02003e;
+        public static final int welcomescreen=0x7f02003f;
     }
     public static final class id {
-        public static final int Button01=0x7f090045;
-        public static final int Button02=0x7f090046;
-        public static final int TextView10=0x7f090049;
-        public static final int TextView11=0x7f09004a;
-        public static final int TextView20=0x7f09004b;
-        public static final int TextView22=0x7f09004c;
-        public static final int TextView30=0x7f09004d;
-        public static final int TextView33=0x7f09004e;
-        public static final int TextView40=0x7f09004f;
-        public static final int TextView44=0x7f090050;
-        public static final int TextView50=0x7f090051;
-        public static final int TextView55=0x7f090052;
-        public static final int TextView9=0x7f090053;
-        public static final int TextView99=0x7f090054;
-        public static final int TextView999=0x7f090055;
-        public static final int TextView9999=0x7f090056;
-        public static final int TextView99999=0x7f090057;
-        public static final int TextView999999=0x7f090058;
-        public static final int TextView9999999=0x7f090059;
-        public static final int TextView99999999=0x7f09005a;
+        public static final int BedragHeader=0x7f09004d;
+        public static final int Button01=0x7f090046;
+        public static final int Button02=0x7f090045;
+        public static final int MaandHeader=0x7f09004c;
+        public static final int TextView10=0x7f09004f;
+        public static final int TextView11=0x7f090050;
         public static final int action_bar=0x7f090033;
         public static final int action_bar_activity_content=0x7f090003;
         public static final int action_bar_container=0x7f090032;
@@ -1680,13 +1667,14 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f090030;
         public static final int action_mode_bar_stub=0x7f09002f;
         public static final int action_mode_close_button=0x7f090022;
-        public static final int action_settings=0x7f09005c;
+        public static final int action_settings=0x7f090053;
         public static final int activity_chooser_view_content=0x7f090023;
         public static final int always=0x7f090014;
         public static final int beginning=0x7f09001b;
         public static final int bottom=0x7f09001e;
-        public static final int button1=0x7f090043;
+        public static final int button1=0x7f090048;
         public static final int button2=0x7f090047;
+        public static final int buttonReturn=0x7f090042;
         public static final int checkbox=0x7f09002b;
         public static final int collapseActionView=0x7f090015;
         public static final int decor_content_parent=0x7f090031;
@@ -1705,7 +1693,7 @@ containing a value of this type.
         public static final int image=0x7f090025;
         public static final int imageView1=0x7f090041;
         public static final int imageView2=0x7f090044;
-        public static final int imageView3=0x7f09005b;
+        public static final int imageView3=0x7f090052;
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090027;
         public static final int middle=0x7f09001d;
@@ -1729,11 +1717,15 @@ containing a value of this type.
         public static final int showCustom=0x7f090010;
         public static final int showHome=0x7f090011;
         public static final int showTitle=0x7f090012;
-        public static final int spinner=0x7f090048;
+        public static final int spinner=0x7f090049;
         public static final int split_action_bar=0x7f090004;
         public static final int submit_area=0x7f09003e;
         public static final int tabMode=0x7f09000c;
-        public static final int textView1=0x7f090042;
+        public static final int tableLayout=0x7f09004b;
+        public static final int tableLayout2=0x7f09004e;
+        public static final int textNaamVoornaam=0x7f09004a;
+        public static final int textView1=0x7f090051;
+        public static final int textVoornaamAchternaam=0x7f090043;
         public static final int title=0x7f090029;
         public static final int top=0x7f09001f;
         public static final int up=0x7f090001;
@@ -1801,13 +1793,14 @@ containing a value of this type.
     }
     public static final class menu {
         public static final int admin=0x7f0c0000;
-        public static final int encounter=0x7f0c0001;
-        public static final int greeting=0x7f0c0002;
-        public static final int main=0x7f0c0003;
-        public static final int overview=0x7f0c0004;
-        public static final int payment=0x7f0c0005;
-        public static final int presence=0x7f0c0006;
-        public static final int user=0x7f0c0007;
+        public static final int androidqrcodeexample=0x7f0c0001;
+        public static final int encounter=0x7f0c0002;
+        public static final int greeting=0x7f0c0003;
+        public static final int main=0x7f0c0004;
+        public static final int overview=0x7f0c0005;
+        public static final int payment=0x7f0c0006;
+        public static final int presence=0x7f0c0007;
+        public static final int user=0x7f0c0008;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1867,6 +1860,7 @@ containing a value of this type.
         public static final int app_name=0x7f0a000f;
         public static final int hello_world=0x7f0a0010;
         public static final int title_activity_admin=0x7f0a0012;
+        public static final int title_activity_androidqrcodeexample=0x7f0a0019;
         public static final int title_activity_encounter=0x7f0a0013;
         public static final int title_activity_greeting=0x7f0a0016;
         public static final int title_activity_overview=0x7f0a0014;

@@ -36,10 +36,16 @@ public class UserActivity extends ActionBarActivity{
 	}
 	public void goToBedragen(View view) {
     	Intent intent = new Intent(this, PaymentActivity.class);
+    	Bundle bundle = getIntent().getExtras();
+    	int value = bundle.getInt("sessionID");
+    	intent.putExtra("sessionID", value);
     	startActivity(intent);
     }
 	public void goToAanwezigheden(View view) {
     	Intent intent = new Intent(this, PresenceActivity.class);
+    	Bundle bundle = getIntent().getExtras();
+    	int value = bundle.getInt("sessionID");
+    	intent.putExtra("sessionID", value);
     	startActivity(intent);
     }
 }

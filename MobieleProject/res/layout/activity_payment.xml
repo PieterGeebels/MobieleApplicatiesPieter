@@ -11,7 +11,7 @@
     tools:context="com.example.mobieleproject.PaymentActivity" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textNaamVoornaam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView1"
@@ -28,33 +28,22 @@
             android:src="@drawable/bedragentitel" />
 
            <ScrollView
-               android:layout_width="fill_parent"
-               android:layout_height="fill_parent"
-               android:layout_alignLeft="@+id/imageView1"
-               android:layout_alignTop="@+id/imageView1"
-               android:isScrollContainer="true"
-               android:overScrollMode="always"
-               android:scrollbarAlwaysDrawVerticalTrack="true"
-               android:scrollbarStyle="outsideInset"
-               android:fillViewport="true"
-               android:scrollbars="vertical" 
-               android:layout_gravity="center" >
-               
-
-               <LinearLayout
-                   android:layout_width="fill_parent"
-                   android:layout_height="wrap_content"
-                   android:orientation="vertical" >
-                   
-
-                   <TableLayout
-                       android:layout_width="match_parent"
-                       android:layout_height="match_parent"
-                       android:layout_marginTop="120dp"
-                       android:background="#ffffff"
-                       android:shrinkColumns="*"
-                       android:isScrollContainer="true"
-                       android:stretchColumns="1" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="none"
+    android:layout_weight="1">
+    <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical">
+        
+        <TableLayout            
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="110dp"
+            android:id = "@+id/tableLayout"
+            android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+                       
 
                        <TableRow
                            android:layout_width="fill_parent"
@@ -62,216 +51,29 @@
                            android:gravity="center_horizontal" >
 
                            <TextView
-                               android:id="@+id/TextView10"
+                               android:id="@+id/MaandHeader"
                                android:layout_weight="1"
                                android:background="#b0b0b0"
                                android:gravity="center"
-                               android:padding="18dip"
-                               android:text="Januari 2015"
+                               android:padding="5dip"
+                               android:text="   Maand   "
                                android:textColor="#000000" />
 
                            <TextView
-                               android:id="@+id/TextView11"
+                               android:id="@+id/BedragHeader"
                                android:layout_weight="1"
                                android:background="#a09f9f"
                                android:gravity="center"
-                               android:padding="18dip"
-                               android:text="Betaald"
+                               android:padding="5dip"
+                               android:text="Bedrag"
                                android:textColor="#000000" />
                        </TableRow>
 
-                       <TableRow
-                           android:layout_width="fill_parent"
-                           android:layout_height="wrap_content"
-                           android:gravity="center_horizontal" >
 
-                           <TextView
-                               android:id="@+id/TextView20"
-                               android:layout_weight="1"
-                               android:background="#b0b0b0"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="Februari 2015"
-                               android:textColor="#000000" />
-
-                           <TextView
-                               android:id="@+id/TextView22"
-                               android:layout_weight="1"
-                               android:background="#a09f9f"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="Betaald"
-                               android:textColor="#000000" />
-                       </TableRow>
-
-                       <TableRow
-                           android:layout_width="fill_parent"
-                           android:layout_height="wrap_content"
-                           android:gravity="center_horizontal" >
-
-                           <TextView
-                               android:id="@+id/TextView30"
-                               android:layout_weight="1"
-                               android:background="#b0b0b0"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="Maart 2015"
-                               android:textColor="#000000" />
-
-                           <TextView
-                               android:id="@+id/TextView33"
-                               android:layout_weight="1"
-                               android:background="#a09f9f"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="350€"
-                               android:textColor="#000000" />
-                       </TableRow>
-
-                       <TableRow
-                           android:layout_width="fill_parent"
-                           android:layout_height="wrap_content"
-                           android:gravity="center_horizontal" >
-
-                           <TextView
-                               android:id="@+id/TextView40"
-                               android:layout_weight="1"
-                               android:background="#b0b0b0"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="April 2015"
-                               android:textColor="#000000" />
-
-                           <TextView
-                               android:id="@+id/TextView44"
-                               android:layout_weight="1"
-                               android:background="#a09f9f"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="325€"
-                               android:textColor="#000000" />
-                       </TableRow>
-
-                       <TableRow
-                           android:layout_width="fill_parent"
-                           android:layout_height="wrap_content"
-                           android:gravity="center_horizontal" >
-
-                           <TextView
-                               android:id="@+id/TextView50"
-                               android:layout_weight="1"
-                               android:background="#b0b0b0"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="Mei 2015"
-                               android:textColor="#000000" />
-
-                           <TextView
-                               android:id="@+id/TextView55"
-                               android:layout_weight="1"
-                               android:background="#a09f9f"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="---"
-                               android:textColor="#000000" />
-                       </TableRow>
-
-                       <TableRow
-                           android:layout_width="fill_parent"
-                           android:layout_height="wrap_content"
-                           android:gravity="center_horizontal" >
-
-                           <TextView
-                               android:id="@+id/TextView9"
-                               android:layout_weight="1"
-                               android:background="#b0b0b0"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="Juni 2015"
-                               android:textColor="#000000" />
-
-                           <TextView
-                               android:id="@+id/TextView99"
-                               android:layout_weight="1"
-                               android:background="#a09f9f"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="---"
-                               android:textColor="#000000" />
-                       </TableRow>
-
-                       <TableRow
-                           android:layout_width="fill_parent"
-                           android:layout_height="wrap_content"
-                           android:gravity="center_horizontal" >
-
-                           <TextView
-                               android:id="@+id/TextView999"
-                               android:layout_weight="1"
-                               android:background="#b0b0b0"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="Juli 2015"
-                               android:textColor="#000000" />
-
-                           <TextView
-                               android:id="@+id/TextView9999"
-                               android:layout_weight="1"
-                               android:background="#a09f9f"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="---"
-                               android:textColor="#000000" />
-                       </TableRow>
-
-                       <TableRow
-                           android:layout_width="fill_parent"
-                           android:layout_height="wrap_content"
-                           android:gravity="center_horizontal" >
-
-                           <TextView
-                               android:id="@+id/TextView99999"
-                               android:layout_weight="1"
-                               android:background="#b0b0b0"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="Augustus 2015"
-                               android:textColor="#000000" />
-
-                           <TextView
-                               android:id="@+id/TextView999999"
-                               android:layout_weight="1"
-                               android:background="#a09f9f"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="---"
-                               android:textColor="#000000" />
-                       </TableRow>
-                       <TableRow
-                           android:layout_width="fill_parent"
-                           android:layout_height="wrap_content"
-                           android:gravity="center_horizontal" >
-
-                           <TextView
-                               android:id="@+id/TextView9999999"
-                               android:layout_weight="1"
-                               android:background="#b0b0b0"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="September 2015"
-                               android:textColor="#000000" />
-
-                           <TextView
-                               android:id="@+id/TextView99999999"
-                               android:layout_weight="1"
-                               android:background="#a09f9f"
-                               android:gravity="center"
-                               android:padding="18dip"
-                               android:text="---"
-                               android:textColor="#000000" />
-                       </TableRow>
                    </TableLayout>
-               </LinearLayout>
-           </ScrollView>
+      </LinearLayout>
+      </ScrollView>
+              
+           
 
 </RelativeLayout>

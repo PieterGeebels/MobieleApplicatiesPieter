@@ -11,5 +11,6 @@
     <string name="title_activity_greeting">GreetingActivity</string>
     <string name="title_activity_presence">PresenceActivity</string>
     <string name="title_activity_payment">PaymentActivity</string>
+    <string name="title_activity_androidqrcodeexample">Androidqrcodeexample</string>
 
 </resources>

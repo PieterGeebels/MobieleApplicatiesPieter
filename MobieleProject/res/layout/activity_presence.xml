@@ -10,7 +10,7 @@
     tools:context="com.example.mobieleproject.PresenceActivity" >
 
             <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/textNaamVoornaam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView1"
@@ -39,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="110dp"
+            android:id = "@+id/tableLayout2"
             android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
                          
                         
@@ -47,136 +48,18 @@
                             android:layout_width="fill_parent"
                             android:gravity="center_horizontal">
                             <TextView
-                                android:id="@+id/TextView10" android:text="Dinsdag 21/07"
+                                android:id="@+id/TextView10" android:text=" Datum "
                                 android:layout_weight="1"  android:background="#b0b0b0"
                                 android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
+                                android:padding="5dip" android:gravity="center"/>
                      
                             <TextView
-                                android:id="@+id/TextView11" android:text="5u"
+                                android:id="@+id/TextView11" android:text="Uren"
                                 android:layout_weight="1" android:background="#a09f9f"
                                 android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
+                                android:padding="5dip" android:gravity="center"/>
                         </TableRow>
                         
-                        <TableRow
-                            android:layout_height="wrap_content"
-                            android:layout_width="fill_parent"
-                            android:gravity="center_horizontal">
-                            <TextView
-                                android:id="@+id/TextView20" android:text="Woensdag 22/07"
-                                android:layout_weight="1"  android:background="#b0b0b0"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                     
-                            <TextView
-                                android:id="@+id/TextView22" android:text="5.5u"
-                                android:layout_weight="1" android:background="#a09f9f"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                        </TableRow>
-                        
-                        <TableRow
-                            android:layout_height="wrap_content"
-                            android:layout_width="fill_parent"
-                            android:gravity="center_horizontal">
-                            <TextView
-                                android:id="@+id/TextView30" android:text="Donderdag 23/07"
-                                android:layout_weight="1"  android:background="#b0b0b0"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                     
-                            <TextView
-                                android:id="@+id/TextView33" android:text="5u"
-                                android:layout_weight="1" android:background="#a09f9f"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                        </TableRow>
-                        
-                        <TableRow
-                            android:layout_height="wrap_content"
-                            android:layout_width="fill_parent"
-                            android:gravity="center_horizontal">
-                            <TextView
-                                android:id="@+id/TextView40" android:text="Vrijdag 24/07"
-                                android:layout_weight="1"  android:background="#b0b0b0"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                     
-                            <TextView
-                                android:id="@+id/TextView44" android:text="6u"
-                                android:layout_weight="1" android:background="#a09f9f"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                        </TableRow>
-                        
-                        <TableRow
-                            android:layout_height="wrap_content"
-                            android:layout_width="fill_parent"
-                            android:gravity="center_horizontal">
-                            <TextView
-                                android:id="@+id/TextView50" android:text="Zaterdag 25/07"
-                                android:layout_weight="1"  android:background="#b0b0b0"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                     
-                            <TextView
-                                android:id="@+id/TextView55" android:text="---"
-                                android:layout_weight="1" android:background="#a09f9f"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                        </TableRow>
-                        
-                        <TableRow
-                            android:layout_height="wrap_content"
-                            android:layout_width="fill_parent"
-                            android:gravity="center_horizontal">
-                            <TextView
-                                android:id="@+id/TextView9" android:text="Zondag 26/07"
-                                android:layout_weight="1"  android:background="#b0b0b0"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                     
-                            <TextView
-                                android:id="@+id/TextView99" android:text="---"
-                                android:layout_weight="1" android:background="#a09f9f"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                        </TableRow>
-                        
-                        <TableRow
-                            android:layout_height="wrap_content"
-                            android:layout_width="fill_parent"
-                            android:gravity="center_horizontal">
-                            <TextView
-                                android:id="@+id/TextView999" android:text="Maandag 27/07"
-                                android:layout_weight="1"  android:background="#b0b0b0"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                     
-                            <TextView
-                                android:id="@+id/TextView9999" android:text="3u"
-                                android:layout_weight="1" android:background="#a09f9f"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                        </TableRow>
-                        
-                        <TableRow
-                            android:layout_height="wrap_content"
-                            android:layout_width="fill_parent"
-                            android:gravity="center_horizontal">
-                            <TextView
-                                android:id="@+id/TextView99999" android:text="Dinsdag 28/07"
-                                android:layout_weight="1"  android:background="#b0b0b0"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                     
-                            <TextView
-                                android:id="@+id/TextView999999" android:text="8u"
-                                android:layout_weight="1" android:background="#a09f9f"
-                                android:textColor="#000000"
-                                android:padding="18dip" android:gravity="center"/>
-                        </TableRow>
                         
                          
       </TableLayout>

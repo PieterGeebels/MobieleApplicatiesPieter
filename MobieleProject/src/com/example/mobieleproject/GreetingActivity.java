@@ -1,18 +1,32 @@
 package com.example.mobieleproject;
 
+import service.Facade;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class GreetingActivity extends ActionBarActivity {
+	
+	private Facade facade;
+	private int userID;
+	private boolean aangemeld;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_greeting);
+		
+		facade = Facade.getInstance();
+		Bundle bundle = getIntent().getExtras();
+    	int value = bundle.getInt("sessionID");
+    	userID = value;    	
+		
+		initiatePage();
 	}
 
 	@Override
@@ -36,5 +50,29 @@ public class GreetingActivity extends ActionBarActivity {
     public void returnToQR(View view) {
     	Intent intent = new Intent(this, MainActivity.class);
     	startActivity(intent);
+    }
+    
+    public void initiatePage(){
+    	TextView naamVoornaam = (TextView)findViewById(R.id.textVoornaamAchternaam);    	
+		naamVoornaam.setText(facade.getUser(userID).getNaam());
+		ImageView image = (ImageView)findViewById(R.id.imageView1);
+		
+		aangemeld = facade.getUser(userID).isAangemeld();
+		
+		if(!aangemeld){
+			
+			image.setImageResource(R.drawable.welcomescreen);
+			facade.getUser(userID).meldAan();
+			facade.startRegistratieTimer(userID);
+			
+		}else{
+			System.out.println("Hier kom ik door voor ik naar de facade ga");
+			image.setImageResource(R.drawable.vaarwelfoto);
+			facade.getUser(userID).meldAf();
+			facade.stopRegistratieTimer(userID);
+			
+		}
+		
+    	
     }
 }
