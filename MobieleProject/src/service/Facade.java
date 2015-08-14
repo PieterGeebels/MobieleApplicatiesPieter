@@ -61,14 +61,16 @@ public class Facade {
 	public void startRegistratieTimer(int userID){
 		
 		getUser(userID).start();
-		System.out.println("bie boe ba, tstaat aan");
+		System.out.println("Start Registratie");
+		updateUser(getUser(userID));
 		
 	}
 	
 	public void stopRegistratieTimer(int userID){
 		
 		getUser(userID).stop();
-		System.out.println("bie boe ba, tstaat af");
+		System.out.println("Stop registratie");
+		updateUser(getUser(userID));
 		
 	}	
 	

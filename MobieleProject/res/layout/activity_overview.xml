@@ -10,23 +10,23 @@
     tools:context="com.example.mobieleproject.OverviewActivity" >
 
     <Button
-        android:id="@+id/Button02"
+        android:id="@+id/ButtonFactuur"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Button01"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/Button01"
-        android:text="Maak factuur/aanmaning" />
+        android:text="Maak factuur en aanmaning" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/Button02"
         android:layout_marginBottom="1dp"
         android:background="@android:color/white"
-        android:text="Alle facturen en aanmaningen aanmaken" />
+        android:text="Login" />
 
     <Button
         android:id="@+id/Button01"

@@ -20,6 +20,9 @@ public class User {
 	private Calendar cal;
 	private Date date;
 	private static boolean isAangemeld;
+	private int laatstToegevoegdeMaand;
+	private boolean maandVeranderd;
+	
 	
 	
 	public User(int userID, String naam){
@@ -31,6 +34,8 @@ public class User {
 		cal = Calendar.getInstance();
 		date = new Date();	
 		isAangemeld = false;
+		laatstToegevoegdeMaand = cal.get(Calendar.MONTH) + 1;
+		maandVeranderd = false;
 		
 	}
 	
@@ -100,7 +105,7 @@ public class User {
 		System.out.println("Passert in User- Stop()");
 		int invoerTime = timeCounter;
 		createAanwezigheid(invoerTime);
-		if(isLaatsteDagVanMaand()){
+		if(maandIsVeranderd()){
 			createBedrag();
 		}
 		
@@ -112,41 +117,45 @@ public class User {
 	//maand en dag concatineren in een string
 	//alles meegeven aan map
 	//MONTH +1, omdat calendar van 0 - 11 gaat.
+	//if-lus om te controleren of de maand gelijk is aan de vorige ingevoegde waarde
+	//indien dit niet het geval is, moet er een nieuw bedrag worden opgemaakt
 	
 	private void createAanwezigheid(int timeInSeconds){
 		
 		int aantalUur = (timeInSeconds/3601) + 1;		
 		cal.setTime(date);
 		int maand = cal.get(Calendar.MONTH) + 1;
+		
+		if(maand != laatstToegevoegdeMaand){
+			maandVeranderd = true;
+			laatstToegevoegdeMaand = maand;
+		}
+		
 		int dag = cal.get(Calendar.DAY_OF_MONTH);
 		Datum datum = new Datum(dag,maand);
 		setAanwezigheid(datum,aantalUur);
 		System.out.println("Aanwezigheid aangemaakt! Op " + datum.getDag() + "/" + datum.getMaand() + " voor " + aantalUur +" uur");
 	}
 	
-	//isLaatsteDagVanMaand
-	//Datum van vandaag met 1 dag vermeerderen om te controleren of het einde van de maand is gepasseerd na vandaag
-	//Indien dit getal = 1, true teruggeven om te laten weten dat er een nieuw bedrag moet worden opgesteld
+	//controleren of maand is veranderd sinds vorige intrede
 	
-	private boolean isLaatsteDagVanMaand(){
+	private boolean maandIsVeranderd(){
 		boolean x = false;
-		cal.setTime(date);
-		cal.add(Calendar.DAY_OF_MONTH,1);
-		int morgen = cal.get(Calendar.DAY_OF_MONTH);
-		if(morgen == 1){
+		if(maandVeranderd){
+			maandVeranderd = false;
 			x = true;
-		}
+		}		
 		return x;
 	}
 	
 	//createBedrag
 	//default prijs die ik heb gegeven = 5 euro per uur aanwezigheid
 	//itereer door de getAanwezigheden-map om bij elke maand die matcht, het juiste aantal uren aan aantalUUR toevoegen
-	//MONTH +1, omdat calendar van 0 - 11 gaat.
+	//MONTH niet +1, omdat calendar van 0 - 11 gaat en we spreken over de vorige maand.
 	
 	public void createBedrag(){
-		cal.setTime(date);
-		int maand = cal.get(Calendar.MONTH) + 1;
+		cal.setTime(date);		
+		int maand = cal.get(Calendar.MONTH);		
 		int aantalUUR = 0;
 		
 		for (Map.Entry<Datum, Integer> entry : getAanwezigheden().entrySet()){
