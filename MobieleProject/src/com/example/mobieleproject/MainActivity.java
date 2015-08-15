@@ -34,6 +34,7 @@ public class MainActivity extends ActionBarActivity {
 	
 	private static boolean adminActive = false;
 	private Facade facade;
+	private static boolean isReedsOpgehaaldVanDB = false;
 	
 
 
@@ -44,9 +45,12 @@ public class MainActivity extends ActionBarActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         
-//        new GetAllUsersTask().execute(new DbConnector());
-//        new GetAllAanwezighedenTask().execute(new DbConnector());
-//        new GetAllBedragenTask().execute(new DbConnector());
+        if(!isReedsOpgehaaldVanDB){
+        new GetAllUsersTask().execute(new DbConnector());
+        new GetAllAanwezighedenTask().execute(new DbConnector());
+        new GetAllBedragenTask().execute(new DbConnector());
+        isReedsOpgehaaldVanDB = true;
+        }
 
     }
 
@@ -98,137 +102,138 @@ public class MainActivity extends ActionBarActivity {
     	}
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-//    public void setUsers(JSONArray jsonArray)    {
-//    	
-//        User u  =new User(500, "Alibaba");
-//        for(int i=0; i<jsonArray.length();i++){
-//
-//            JSONObject json = null;
-//            try {
-//                json = jsonArray.getJSONObject(i);
-//               
-//                u.setUserID(Integer.parseInt(json.getString("USER_ID")));
-//                u.setNaam(json.getString("USER_NAME"));
-//                
-////                facade.addUser(u);
-//                System.out.println(u.getNaam());
-//               
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
-//
-//
-//    }
+    public void setUsers(JSONArray jsonArray)    {
+    	
+        
+        for(int i=0; i<jsonArray.length();i++){
+
+            JSONObject json = null;
+            try {
+                json = jsonArray.getJSONObject(i);
+                User u  =new User(500, "Alibaba");
+                u.setUserID(Integer.parseInt(json.getString("USER_ID")));
+                u.setNaam(json.getString("USER_Name"));
+                
+                facade.addUser(u);
+                
+               
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+    }
     
-//    public void setAanwezigheden(JSONArray jsonArray)    {
-//    	
-//        
-//        for(int i=0; i<jsonArray.length();i++){
-//
-//            JSONObject json = null;
-//            try {
-//                json = jsonArray.getJSONObject(i);
-//               
-//                int userID = (Integer.parseInt(json.getString("USER_ID")));
-//                int day = (Integer.parseInt(json.getString("DAY")));
-//                int month = (Integer.parseInt(json.getString("MONTH")));
-//                int hours = (Integer.parseInt(json.getString("HOURS_PRESENT")));
-//                facade.getUser(userID).setAanwezigheid(new Datum(day,month), hours);
-//                
-//                
-//               
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
-//
-//
-//    }
-//    
-//    public void setBedragen(JSONArray jsonArray)    {
-//    	
-//        User u  =new User(500, "Alibaba");
-//        for(int i=0; i<jsonArray.length();i++){
-//
-//            JSONObject json = null;
-//            try {
-//                json = jsonArray.getJSONObject(i);
-//               
-//                int userID = (Integer.parseInt(json.getString("USER_ID")));
-//                int maand = (Integer.parseInt(json.getString("MAAND")));
-//                int bedrag = (Integer.parseInt(json.getString("BEDRAG")));
-//                facade.getUser(userID).setBedrag(maand, bedrag);
-//                
-//                
-//               
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
-//
-//
-//    }
+    public void setAanwezigheden(JSONArray jsonArray)    {
+    	
+        
+        for(int i=0; i<jsonArray.length();i++){
+
+            JSONObject json = null;
+            try {
+                json = jsonArray.getJSONObject(i);
+               
+                int userID = (Integer.parseInt(json.getString("USER_ID")));
+                int day = (Integer.parseInt(json.getString("DAY")));
+                int month = (Integer.parseInt(json.getString("MONTH")));
+                int hours = (Integer.parseInt(json.getString("HOURS_PRESENT")));               
+                
+                facade.getUser(userID).setAanwezigheid(new Datum(day,month), hours);
+                
+                
+               
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+    }
+    
+    public void setBedragen(JSONArray jsonArray)    {
+    	
+        
+        for(int i=0; i<jsonArray.length();i++){
+
+            JSONObject json = null;
+            try {
+                json = jsonArray.getJSONObject(i);
+               
+                int userID = (Integer.parseInt(json.getString("USER_ID")));
+                int maand = (Integer.parseInt(json.getString("MAAND")));
+                int bedrag = (Integer.parseInt(json.getString("BEDRAG")));
+                facade.getUser(userID).setBedrag(maand, bedrag);
+                
+                
+               
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-//    private class GetAllUsersTask extends AsyncTask<DbConnector, Long, JSONArray> {
-//    	 
-//        @Override
-//        protected void onPostExecute(JSONArray jsonArray) {
-//
-//                // setTextToTextView(jsonArray);
-//                setUsers(jsonArray);
-//
-//        }
-//
-//        @Override
-//        protected JSONArray doInBackground(DbConnector... params) {
-//                // TODO Auto-generated method stub
-//                return params[0].GetData("users");
-//                
-//                
-//        }
-//    }
-//    private class GetAllAanwezighedenTask extends AsyncTask<DbConnector, Long, JSONArray> {
-//   	 
-//        @Override
-//        protected void onPostExecute(JSONArray jsonArray) {
-//
-//                // setTextToTextView(jsonArray);
-//                setAanwezigheden(jsonArray);
-//
-//        }
-//
-//        @Override
-//        protected JSONArray doInBackground(DbConnector... params) {
-//                // TODO Auto-generated method stub
-//                return params[0].GetData("aanwezigheden");
-//                
-//                
-//        }
-//    }
-//    
-//    private class GetAllBedragenTask extends AsyncTask<DbConnector, Long, JSONArray> {
-//   	 
-//        @Override
-//        protected void onPostExecute(JSONArray jsonArray) {
-//
-//                // setTextToTextView(jsonArray);
-//                setBedragen(jsonArray);
-//
-//        }
-//
-//        @Override
-//        protected JSONArray doInBackground(DbConnector... params) {
-//                // TODO Auto-generated method stub
-//                return params[0].GetData("bedragen");
-//                
-//                
-//        }
-//    }
-//    
-//
+    private class GetAllUsersTask extends AsyncTask<DbConnector, Long, JSONArray> {
+    	 
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+
+                // setTextToTextView(jsonArray);
+                setUsers(jsonArray);
+
+        }
+
+        @Override
+        protected JSONArray doInBackground(DbConnector... params) {
+                // TODO Auto-generated method stub
+                return params[0].GetData("users");
+                
+                
+        }
+    }
+    private class GetAllAanwezighedenTask extends AsyncTask<DbConnector, Long, JSONArray> {
+   	 
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+
+                // setTextToTextView(jsonArray);
+                setAanwezigheden(jsonArray);
+
+        }
+
+        @Override
+        protected JSONArray doInBackground(DbConnector... params) {
+                // TODO Auto-generated method stub
+                return params[0].GetData("aanwezigheden");
+                
+                
+        }
+    }
+    
+    private class GetAllBedragenTask extends AsyncTask<DbConnector, Long, JSONArray> {
+   	 
+        @Override
+        protected void onPostExecute(JSONArray jsonArray) {
+
+                // setTextToTextView(jsonArray);
+                setBedragen(jsonArray);
+
+        }
+
+        @Override
+        protected JSONArray doInBackground(DbConnector... params) {
+                // TODO Auto-generated method stub
+                return params[0].GetData("bedragen");
+                
+                
+        }
+    }
+    
+
 }

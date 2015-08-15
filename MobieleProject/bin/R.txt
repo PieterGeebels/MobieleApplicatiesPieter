@@ -347,9 +347,9 @@ int drawable userknopbedragen 0x7f02003d
 int drawable vaarwelfoto 0x7f02003e
 int drawable welkomscherm 0x7f02003f
 int id BedragHeader 0x7f09004e
-int id Button01 0x7f090046
-int id Button02 0x7f090048
-int id ButtonFactuur 0x7f090045
+int id Button01 0x7f090048
+int id Button02 0x7f090046
+int id ButtonFactuur 0x7f090047
 int id MaandHeader 0x7f09004d
 int id TextView10 0x7f090050
 int id TextView11 0x7f090051
@@ -394,7 +394,7 @@ int id imageView2 0x7f090044
 int id imageView3 0x7f090052
 int id listMode 0x7f09000a
 int id list_item 0x7f090027
-int id login 0x7f090047
+int id login 0x7f090045
 int id middle 0x7f09001d
 int id never 0x7f090017
 int id none 0x7f09000f

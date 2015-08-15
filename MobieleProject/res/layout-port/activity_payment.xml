@@ -1,0 +1,79 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/backgroundfinal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.mobieleproject.PaymentActivity" >
+
+        <TextView
+            android:id="@+id/textNaamVoornaam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_centerHorizontal="true"
+            android:text="Voornaam_Achternaam"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/bedragentitel" />
+
+           <ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="none"
+    android:layout_weight="1">
+    <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical">
+        
+        <TableLayout            
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="110dp"
+            android:id = "@+id/tableLayout"
+            android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+                       
+
+                       <TableRow
+                           android:layout_width="fill_parent"
+                           android:layout_height="wrap_content"
+                           android:gravity="center_horizontal" >
+
+                           <TextView
+                               android:id="@+id/MaandHeader"
+                               android:layout_weight="1"
+                               android:background="#b0b0b0"
+                               android:gravity="center"
+                               android:padding="5dip"
+                               android:text="@string/maand"
+                               android:textColor="#000000" />
+
+                           <TextView
+                               android:id="@+id/BedragHeader"
+                               android:layout_weight="1"
+                               android:background="#a09f9f"
+                               android:gravity="center"
+                               android:padding="5dip"
+                               android:text="@string/bedrag"
+                               android:textColor="#000000" />
+                       </TableRow>
+
+
+                   </TableLayout>
+      </LinearLayout>
+      </ScrollView>
+              
+           
+
+</RelativeLayout>

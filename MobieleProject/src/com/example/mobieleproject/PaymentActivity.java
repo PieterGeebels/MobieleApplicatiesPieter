@@ -96,14 +96,5 @@ public class PaymentActivity extends ActionBarActivity {
 		
 	}
 	
-	@Override
-	public void onBackPressed() {
-		super.onBackPressed();
-		Intent intent = new Intent(this, UserActivity.class);
-    	Bundle bundle = getIntent().getExtras();
-    	int value = bundle.getInt("sessionID");
-    	intent.putExtra("sessionID", value);
-		startActivity(intent);
-		finish();
-	}
+
 }

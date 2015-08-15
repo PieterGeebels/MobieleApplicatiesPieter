@@ -1649,9 +1649,9 @@ containing a value of this type.
     }
     public static final class id {
         public static final int BedragHeader=0x7f09004e;
-        public static final int Button01=0x7f090046;
-        public static final int Button02=0x7f090048;
-        public static final int ButtonFactuur=0x7f090045;
+        public static final int Button01=0x7f090048;
+        public static final int Button02=0x7f090046;
+        public static final int ButtonFactuur=0x7f090047;
         public static final int MaandHeader=0x7f09004d;
         public static final int TextView10=0x7f090050;
         public static final int TextView11=0x7f090051;
@@ -1696,7 +1696,7 @@ containing a value of this type.
         public static final int imageView3=0x7f090052;
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f090027;
-        public static final int login=0x7f090047;
+        public static final int login=0x7f090045;
         public static final int middle=0x7f09001d;
         public static final int never=0x7f090017;
         public static final int none=0x7f09000f;

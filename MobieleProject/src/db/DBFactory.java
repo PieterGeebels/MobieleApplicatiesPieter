@@ -11,12 +11,9 @@ public class DBFactory {
 	public DB getDatabank(){
 		DB databank = null;
 		
-			if(status){
-				databank = new OnlineDB();
-			}
-			else{
+
 				databank = new MapDB();
-			}		
+				
 		
 		return databank;
 	}

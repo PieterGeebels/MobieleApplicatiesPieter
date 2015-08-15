@@ -14,7 +14,7 @@ import model.UserRepository;
 import db.DB;
 import db.DBFactory;
 import db.MapDB;
-import db.OnlineDB;
+
 
 public class Facade {
 	
@@ -23,7 +23,7 @@ public class Facade {
 	private UserRepository repository;
 	private static Facade instance = null;
 	private static boolean isOnline = false;
-	private OnlineDB tester;
+	
 	
 	public Facade(){
 		
@@ -32,10 +32,10 @@ public class Facade {
 		repository = new UserRepository();
 		
 		
-		for(User u : repository.getUsers()){
-			addUser(u);			
-			
-		}
+//		for(User u : repository.getUsers()){
+//			addUser(u);			
+//			
+//		}
 		
 	}
 	
