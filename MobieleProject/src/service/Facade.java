@@ -1,25 +1,40 @@
 package service;
 
+import java.io.IOException;
+import java.net.InetAddress;
 import java.util.List;
 import java.util.Map;
 
+
+import android.content.Context;
+import android.net.NetworkInfo;
 import model.Datum;
 import model.User;
 import model.UserRepository;
 import db.DB;
+import db.DBFactory;
 import db.MapDB;
+import db.OnlineDB;
 
 public class Facade {
 	
 	private DB database;
+	
 	private UserRepository repository;
 	private static Facade instance = null;
+	private static boolean isOnline = false;
+	private OnlineDB tester;
 	
 	public Facade(){
-		database = new MapDB();
+		
+		DBFactory factory = new DBFactory(isOnline);
+		database = factory.getDatabank();
 		repository = new UserRepository();
+		
+		
 		for(User u : repository.getUsers()){
-			addUser(u);
+			addUser(u);			
+			
 		}
 		
 	}
@@ -32,8 +47,10 @@ public class Facade {
 
         return instance;
     }
+    
+
 	
-	public void addUser(User user){
+	public void addUser(User user){		
 		
 		database.add(user);
 	}

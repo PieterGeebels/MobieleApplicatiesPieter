@@ -5,6 +5,7 @@ import java.util.Map;
 import model.Datum;
 import service.Facade;
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -21,6 +22,7 @@ public class PresenceActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getSupportActionBar().hide();
 		setContentView(R.layout.activity_presence);
 		
 		facade = Facade.getInstance();
@@ -82,5 +84,16 @@ public class PresenceActivity extends ActionBarActivity {
 	        table.addView(row);
 		}
 		
+	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		Intent intent = new Intent(this, UserActivity.class);
+    	Bundle bundle = getIntent().getExtras();
+    	int value = bundle.getInt("sessionID");
+    	intent.putExtra("sessionID", value);
+		startActivity(intent);
+		finish();
 	}
 }

@@ -45,6 +45,7 @@ public class OverviewActivity extends ActionBarActivity implements OnItemSelecte
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getSupportActionBar().hide();
 		setContentView(R.layout.activity_overview);
 		facade = Facade.getInstance();
         initialiseNames();

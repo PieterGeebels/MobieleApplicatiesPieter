@@ -1,18 +1,24 @@
 package com.example.mobieleproject;
 
+import service.Facade;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class UserActivity extends ActionBarActivity{
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getSupportActionBar().hide();
+		
 		setContentView(R.layout.activity_user);
+		
 	}
 	
 
@@ -48,4 +54,14 @@ public class UserActivity extends ActionBarActivity{
     	intent.putExtra("sessionID", value);
     	startActivity(intent);
     }
+	
+
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		Intent intent = new Intent(this, MainActivity.class);    	
+		startActivity(intent);
+		finish();
+	}
 }

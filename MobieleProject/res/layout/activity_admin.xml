@@ -10,23 +10,21 @@
     tools:context="com.example.mobieleproject.AdminActivity" >
 
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_below="@+id/imageView1"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="returnQRForm"
-        android:src="@drawable/registratieknop" />
-
-    <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="125dp"
+        android:layout_marginBottom="127dp"
         android:onClick="goToOverview"
         android:src="@drawable/overzichtknop" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView1"
+        android:layout_alignLeft="@+id/imageView1"
+        android:onClick="returnQRForm"
+        android:src="@drawable/registratieknop" />
 
 </RelativeLayout>

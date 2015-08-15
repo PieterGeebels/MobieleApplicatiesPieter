@@ -19,6 +19,7 @@ public class GreetingActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getSupportActionBar().hide();
 		setContentView(R.layout.activity_greeting);
 		
 		facade = Facade.getInstance();
@@ -61,12 +62,11 @@ public class GreetingActivity extends ActionBarActivity {
 		
 		if(!aangemeld){
 			
-			image.setImageResource(R.drawable.welcomescreen);
+			image.setImageResource(R.drawable.welkomscherm);
 			facade.getUser(userID).meldAan();
 			facade.startRegistratieTimer(userID);
 			
-		}else{
-			System.out.println("Hier kom ik door voor ik naar de facade ga");
+		}else{			
 			image.setImageResource(R.drawable.vaarwelfoto);
 			facade.getUser(userID).meldAf();
 			facade.stopRegistratieTimer(userID);
@@ -75,4 +75,13 @@ public class GreetingActivity extends ActionBarActivity {
 		
     	
     }
+    
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		Intent intent = new Intent(this, MainActivity.class);
+    	
+		startActivity(intent);
+		finish();
+	}
 }

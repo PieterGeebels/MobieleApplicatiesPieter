@@ -11,6 +11,14 @@
     <string name="title_activity_greeting">GreetingActivity</string>
     <string name="title_activity_presence">PresenceActivity</string>
     <string name="title_activity_payment">PaymentActivity</string>
-    <string name="title_activity_androidqrcodeexample">Androidqrcodeexample</string>
+    <string name="login">Login</string><string name="bekijkAanwezigheden">Bekijk Aanwezigheden</string><string name="maakFactuur">Maak Factuur/Aanmaning</string><string name="maand">     Maand     </string><string name="bekijkBedragen">Bekijk Bedragen</string><string name="title_activity_androidqrcodeexample">Androidqrcodeexample</string>
+    
+    
+    
+    
+    
+    <string name="datum"> Datum </string><string name="uren">Uren</string><string name="bedrag">Bedrag</string>
+    
+    
 
 </resources>

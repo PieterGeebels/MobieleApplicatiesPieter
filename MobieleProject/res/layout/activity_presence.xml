@@ -48,13 +48,13 @@
                             android:layout_width="fill_parent"
                             android:gravity="center_horizontal">
                             <TextView
-                                android:id="@+id/TextView10" android:text=" Datum "
+                                android:id="@+id/TextView10" android:text="@string/datum"
                                 android:layout_weight="1"  android:background="#b0b0b0"
                                 android:textColor="#000000"
                                 android:padding="5dip" android:gravity="center"/>
                      
                             <TextView
-                                android:id="@+id/TextView11" android:text="Uren"
+                                android:id="@+id/TextView11" android:text="@string/uren"
                                 android:layout_weight="1" android:background="#a09f9f"
                                 android:textColor="#000000"
                                 android:padding="5dip" android:gravity="center"/>
