@@ -56,9 +56,11 @@ public class AdminActivity extends ActionBarActivity {
     }
     
     private boolean isOnline() {
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        return netInfo != null && netInfo.isConnectedOrConnecting();
+    	ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+    	NetworkInfo ni = cm.getActiveNetworkInfo();
+    	boolean isConnected = ni.isConnected();
+    	return isConnected;
+
     }
     
     public void goToOverview(View view) {

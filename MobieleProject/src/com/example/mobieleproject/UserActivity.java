@@ -51,11 +51,12 @@ public class UserActivity extends ActionBarActivity{
 		return super.onOptionsItemSelected(item);
 	}
 	
-	private boolean isOnline() {
-	        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-	        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-	        return netInfo != null && netInfo.isConnectedOrConnecting();
-	}
+    private boolean isOnline() {
+    	ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+    	NetworkInfo ni = cm.getActiveNetworkInfo();
+    	boolean isConnected = ni.isConnected();
+    	return isConnected;
+    }
 	   
 	   
 	public void goToBedragen(View view) {
