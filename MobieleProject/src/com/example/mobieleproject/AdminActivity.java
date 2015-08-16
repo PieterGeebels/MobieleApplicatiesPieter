@@ -55,17 +55,26 @@ public class AdminActivity extends ActionBarActivity {
     	startActivity(intent);
     }
     
-    private boolean isOnline() {
-    	ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-    	NetworkInfo ni = cm.getActiveNetworkInfo();
-    	boolean isConnected = ni.isConnected();
-    	return isConnected;
+    private boolean haveNetworkConnection() {
+        boolean haveWifi = false;
+        boolean haveMobile = false;
 
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+        for (NetworkInfo ni : netInfo) {
+            if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+                if (ni.isConnected())
+                    haveWifi = true;
+            if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+                if (ni.isConnected())
+                    haveMobile = true;
+        }
+        return haveWifi || haveMobile;
     }
     
     public void goToOverview(View view) {
     	
-    	if(isOnline()){
+    	if(haveNetworkConnection()){
     	try {
 			facade.setAanwezigheden();
 			facade.setBedragen();

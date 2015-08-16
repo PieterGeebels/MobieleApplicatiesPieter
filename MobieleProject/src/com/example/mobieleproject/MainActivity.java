@@ -48,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         
-        if(!isReedsOpgehaaldVanDB){
+        if(!isReedsOpgehaaldVanDB && haveNetworkConnection()){
         new GetAllUsersTask().execute(new DbConnector());
         new GetAllAanwezighedenTask().execute(new DbConnector());
         new GetAllBedragenTask().execute(new DbConnector());
@@ -71,6 +71,23 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    private boolean haveNetworkConnection() {
+        boolean haveWifi = false;
+        boolean haveMobile = false;
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+        for (NetworkInfo ni : netInfo) {
+            if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+                if (ni.isConnected())
+                    haveWifi = true;
+            if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+                if (ni.isConnected())
+                    haveMobile = true;
+        }
+        return haveWifi || haveMobile;
     }
     
     public void onButtonClick(View view){
