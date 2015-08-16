@@ -4,8 +4,8 @@ public class DBFactory {
 	
 	private boolean status;
 	
-	public DBFactory(boolean status){
-		this.status = status;
+	public DBFactory(){
+		
 	}
 	
 	public DB getDatabank(){

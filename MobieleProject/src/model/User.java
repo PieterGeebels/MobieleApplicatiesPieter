@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import service.Facade;
+
 
 public class User {
 	
@@ -22,6 +24,7 @@ public class User {
 	private static boolean isAangemeld;
 	private int laatstToegevoegdeMaand;
 	private boolean maandVeranderd;
+	private Facade facade;
 	
 	
 	
@@ -36,6 +39,7 @@ public class User {
 		isAangemeld = false;
 		laatstToegevoegdeMaand = cal.get(Calendar.MONTH) + 1;
 		maandVeranderd = false;
+		
 		
 	}
 	
@@ -134,6 +138,12 @@ public class User {
 		int dag = cal.get(Calendar.DAY_OF_MONTH);
 		Datum datum = new Datum(dag,maand);
 		setAanwezigheid(datum,aantalUur);
+		
+		
+		facade = Facade.getInstance();
+		facade.addNieuweAanwezigheid(datum,aantalUur,getID());
+		
+		
 		System.out.println("Aanwezigheid aangemaakt! Op " + datum.getDag() + "/" + datum.getMaand() + " voor " + aantalUur +" uur");
 	}
 	
@@ -166,6 +176,11 @@ public class User {
 		}
 		
 		int bedrag = aantalUUR*5;
+		
+		
+		facade.addNieuweBedrag(maand,bedrag,getID());
+		
+		
 		setBedrag(maand,bedrag);		
 		
 	}
